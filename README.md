@@ -1,5 +1,9 @@
 # PERSONA — A voice, under license
 
+Live website: https://persona-delta-blush.vercel.app/
+
+Independent source repository: https://github.com/JuniceLin/persona (private).
+
 CD490 Project 2: Alignment. A speculative artifact by Haowen Tian and Yihong Lin.
 
 ## What is included
