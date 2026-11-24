@@ -1,0 +1,10 @@
+import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
+const root=new URL('./',import.meta.url),dist=new URL('./dist/',root),output=new URL('./output/',root);
+await mkdir(dist,{recursive:true});await mkdir(output,{recursive:true});
+const data=await readFile(new URL('dialogues.json',root),'utf8');await writeFile(new URL('data.mjs',root),'export const dialogues='+data+';\n');
+for(const name of ['index.html','style.css','app.js','data.mjs','profiles.mjs'])await copyFile(new URL(name,root),new URL(name,dist));
+const html=await readFile(new URL('index.html',root),'utf8'),css=await readFile(new URL('style.css',root),'utf8'),profiles=(await readFile(new URL('profiles.mjs',root),'utf8')).replaceAll('export ',''),app=(await readFile(new URL('app.js',root),'utf8')).replace(/^import .*;\n/gm,'');
+const code='const dialogues='+data+';\n'+profiles+'\n'+app;
+const offline=html.replace('<link rel="stylesheet" href="./style.css">',()=>'<style>'+css+'</style>').replace('<script src="./app.js" type="module"></script>',()=>'<script type="module">'+code.replaceAll('</script','<\\/script')+'</script>');
+await writeFile(new URL('PERSONA-offline.html',output),offline);await writeFile(new URL('PERSONA-offline.html',dist),offline);
+console.log('Built standalone static website in dist/ and offline HTML in output/.');
