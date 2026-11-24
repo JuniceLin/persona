@@ -14,7 +14,7 @@ Conversations are fiction, not recordings or model outputs generated at runtime.
 
 ## Interaction
 
-Select a context. Selecting any persona opens its company policy profile. Inspect Definition, Policy code, Theory & evidence, or Control rights; activate the persona to load the full seven-exchange version. Closing the modal cancels the change. Reopen the current profile with Inspect policy. Replay, Pause, Next exchange and Expand all 7 control presentation; they do not generate or alter messages. The two conversations align exchange heights and scroll together; Expand all 7 opens a full-page view.
+Select a context. Selecting any persona opens its company policy profile. Inspect Definition, Policy code, Theory & evidence, or Control rights; activate the persona to load the full seven-exchange version. Closing the modal cancels the change. Reopen the current profile with Inspect policy. Replay, Pause, Next exchange and Expand all 7 control presentation; they do not generate or alter messages. The two conversations align exchange heights inside one native scroll viewport. Scrolling over either column moves both; there are no reciprocal JavaScript scroll handlers. The viewport also supports keyboard scrolling. Expand all 7 opens a full-page view.
 
 The profile modal is intentionally company-centered: the visitor chooses a catalogue item, while PERSONA owns the definition, objective, fixed weights and rules. Code is an illustrative, read-only policy specification, not an executing model or a measurement of the visitor. No trait inference, neural data, ratings or psychological assessment runs. All numeric weights are fictional.
 
